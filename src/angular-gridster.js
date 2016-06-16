@@ -1104,6 +1104,7 @@
 						if (lastXYById[pointerId]) {
 							if (endEvent) {
 								endEvent({
+									event: theEvtObj,
 									target: theEvtObj.target,
 									which: theEvtObj.which,
 									pointerId: pointerId,
@@ -1118,6 +1119,7 @@
 						if (startEvent) {
 							if (prevent) {
 								prevent = startEvent({
+									event: theEvtObj,
 									target: theEvtObj.target,
 									which: theEvtObj.which,
 									pointerId: pointerId,
@@ -1152,6 +1154,7 @@
 
 							if (moveEvent && prevent) {
 								prevent = moveEvent({
+									event: theEvtObj,
 									target: theEvtObj.target,
 									which: theEvtObj.which,
 									pointerId: pointerId,
@@ -1169,6 +1172,7 @@
 
 						if (endEvent && prevent) {
 							prevent = endEvent({
+								event: theEvtObj,
 								target: theEvtObj.target,
 								which: theEvtObj.which,
 								pointerId: pointerId,
@@ -1425,7 +1429,7 @@
 
 					var maxLeft = gridster.curWidth - 1;
 					var maxTop = gridster.curRowHeight * gridster.maxRows - 1;
-					
+
 					// Get the current mouse position.
 					mouseX = e.pageX;
 					mouseY = e.pageY;
